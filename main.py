@@ -62,7 +62,9 @@ test_transform = transforms.Compose([
     transforms.ToTensor(), 
     normalize,
     ])
-
+#设置GPU
+# import os
+# os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 
 train_dataset = datasets.MNIST(root=args.dataset_dir, train=True, 
     				download=True, transform=train_transform)
